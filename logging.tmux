@@ -12,8 +12,8 @@ main() {
     tmux bind-key "$clear_history_key" run-shell "$CURRENT_DIR/scripts/clear_history.sh"
 
     # запускать логирование при создании нового окна или панели
-    set-hook -g after-new-window 'run -b "$CURRENT_DIR/scripts/toggle_logging.sh"'
-    set-hook -g after-split-window 'run -b "$CURRENT_DIR/scripts/toggle_logging.sh"'
+    tmux set-hook -g after-new-window 'run -b "$CURRENT_DIR/scripts/toggle_logging.sh"'
+    tmux set-hook -g after-split-window 'run -b "$CURRENT_DIR/scripts/toggle_logging.sh"'
 }
 
 main
